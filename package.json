@@ -1,0 +1,22 @@
+{
+  "name": "5984",
+  "version": "0.0.1",
+  "description": "CouchDB tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jo/5984.git"
+  },
+  "keywords": [
+    "CouchDB"
+  ],
+  "author": "Johannes J. Schmidt",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jo/5984/issues"
+  },
+  "homepage": "https://github.com/jo/5984#readme"
+}
