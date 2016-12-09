@@ -133,7 +133,15 @@ Group documents to batches.
 
 
 ## Examples
-Here we create a force push chain with optimized batching: 
+Please also have a look at the tests.
+
+##### Compile design document and push it to the couch:
+```sh
+$ 5984 compile ./ddoc | 5984 fetch-revs mydb | 5984 bulk-docs mydb
+{"ok":true,"id":"_design/myapp","rev":"1-967a00dff5e02add41819138abb3284d"}
+```
+
+##### Create a force push chain with optimized batching: 
 ```sh
 5984 batch -n 1000 docs.ndjson \
   | 5984 fetch-revs mydb \
@@ -144,11 +152,6 @@ First the input docs are batched into 1000er batches. For each batch a request
 is being made to retrieve current revisions of the documents. Now the docs are
 again batched, this time into 100er batches. These batches are posted to
 CouchDB.
-
-Compile couchapp and push it to the couch:
-```sh
-5984 compile ./ddoc | 5984 fetch-revs mydb | 5984 bulk-docs mydb
-```
 
 
 ## License
