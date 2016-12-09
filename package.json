@@ -1,25 +1,42 @@
 {
   "name": "5984",
-  "version": "0.0.2",
-  "description": "CouchDB tools",
+  "version": "1.0.0",
+  "description": "Lightweight CouchDB CLI and API for efficient stream processing.",
   "main": "index.js",
   "bin": {
-    "5984": "cli.js"
+    "5984": "cli.js",
+    "fnef": "cli.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretest": "standard",
+    "test": "tap test/test-*.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jo/5984.git"
   },
   "keywords": [
-    "CouchDB"
+    "CouchDB",
+    "ndjson",
+    "cli"
   ],
   "author": "Johannes J. Schmidt",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/jo/5984/issues"
   },
-  "homepage": "https://github.com/jo/5984#readme"
+  "homepage": "https://github.com/jo/5984#readme",
+  "dependencies": {
+    "JSONStream": "^1.2.1",
+    "commander": "^2.9.0",
+    "couchdb-compile": "^1.7.0",
+    "ndjson": "^1.5.0",
+    "readable-stream": "^2.2.2",
+    "split2": "^2.1.0",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tap": "^8.0.1"
+  }
 }

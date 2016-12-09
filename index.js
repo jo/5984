@@ -1,3 +1,6 @@
-module.exports = function 5984 (options) {
-  options = options || {}
+module.exports = {
+  bulkDocs: require('./bulk-docs'),
+  fetchRevs: require('./fetch-revs'),
+  compile: require('./compile'),
+  batch: require('./batch')
 }
