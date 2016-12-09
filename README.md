@@ -133,7 +133,6 @@ Group documents to batches.
 
 
 ## Examples
-Please also have a look at the tests.
 
 ##### Compile design document and push it to the couch:
 ```sh
@@ -152,6 +151,8 @@ First the input docs are batched into 1000er batches. For each batch a request
 is being made to retrieve current revisions of the documents. Now the docs are
 again batched, this time into 100er batches. These batches are posted to
 CouchDB.
+
+Please also have a look at the tests.
 
 
 ## License
