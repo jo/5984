@@ -58,12 +58,12 @@ Documents can can be given using different formats:
 
 ##### Single Doc
 Input chunk can be a single document object:
-```
+```json
 { "_id": "one" }
 ```
 ##### Array of Docs
 ...or an array of docs:
-```
+```json
 [
   { "_id": "one" },
   { "_id": "two" }
@@ -72,7 +72,7 @@ Input chunk can be a single document object:
 ##### Docs Object
 ...or an object with a `docs` property with an array of docs, like eg. used in
 `_bulk_docs` requests:
-```
+```json
 {
   "docs": [
     { "_id": "one" },
