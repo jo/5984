@@ -127,6 +127,8 @@ If `source` is provided, use it as input rather than a stream of filenames.
 
 
 ### batch(options)
+Group documents to batches.
+
 * `options.size`: batch size (default is 100)
 
 
@@ -142,6 +144,11 @@ First the input docs are batched into 1000er batches. For each batch a request
 is being made to retrieve current revisions of the documents. Now the docs are
 again batched, this time into 100er batches. These batches are posted to
 CouchDB.
+
+Compile couchapp and push it to the couch:
+```sh
+5984 compile ./ddoc | 5984 fetch-revs mydb | 5984 bulk-docs mydb
+```
 
 
 ## License
