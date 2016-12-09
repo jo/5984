@@ -1,7 +1,7 @@
 # 5984
 _Lightweight CouchDB CLI and Node API for efficient stream processing._
 
-5984 is a set of a few specific tools. Chaining provides wide flexibility:
+5984 is a set of a few specific tools. Chaining provides wide flexibility.
 ```sh
 5984 batch -n 1000 docs.ndjson \
   | 5984 fetch-revs mydb \
@@ -9,12 +9,22 @@ _Lightweight CouchDB CLI and Node API for efficient stream processing._
   | 5984 bulk mydb
 ```
 
+For now 5984 provides the following commands:
+
 * **bulk-docs:** push document to couchdb
 * **fetch-revs:** fetch document revisions
 * **compile:** compile couchapp directories and modules
 * **batch:** batch documents
 
-The commandline client handles [Newline Delimited JSON](http://ndjson.org/).
+Please [share your thoughts](https://github.com/jo/5984/issues/new) - what is
+important to you and where you'd see a good fit for it.
+
+The commandline client handles [Newline Delimited JSON](http://ndjson.org/),
+which is a perfect fit for CouchDB for many reasons. CouchDB also provides its
+continuous changes feed as ndjson.
+
+I have tried to minimize dependency footprint. Thats why I use plain http
+requests for example.
 
 
 ## Installation
