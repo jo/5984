@@ -4,9 +4,7 @@ var tap = require('tap')
 var helper = require('./helper')
 var fetchRevs = require('../fetch-revs')
 
-tap.beforeEach(function (done) {
-  helper.setup(done, helper.docs)
-})
+tap.beforeEach(helper.setup.bind(null, helper.docs))
 
 for (var name in helper.fixtures) {
   tap.test('test ' + name + ' input', function (t) {

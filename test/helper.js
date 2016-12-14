@@ -13,7 +13,12 @@ exports.fixtures = {
   docsArray: path.join(__dirname, 'fixtures/docs-array.ndjson')
 }
 exports.docs = require(path.join(__dirname, 'fixtures/docs.json'))
-exports.setup = function (done, docs) {
+exports.setup = function (docs, done) {
+  if (typeof docs === 'function') {
+    done = docs
+    docs = null
+  }
+
   var u = url.parse(exports.dbUrl)
   var headers = {
     'Content-Type': 'application/json'
