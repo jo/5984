@@ -1,6 +1,6 @@
 {
   "name": "5984",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "Lightweight CouchDB CLI and API for efficient stream processing.",
   "main": "index.js",
   "bin": {
@@ -9,11 +9,12 @@
   },
   "scripts": {
     "pretest": "standard",
-    "test": "tap test/test-*.js"
+    "test": "tap test/test-*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jo/5984.git"
+    "url": "https://github.com/jo/5984.git"
   },
   "keywords": [
     "CouchDB",
@@ -37,6 +38,7 @@
   },
   "devDependencies": {
     "standard": "^8.6.0",
-    "tap": "^8.0.1"
+    "tap": "^8.0.1",
+    "semantic-release": "^6.3.2"
   }
 }
