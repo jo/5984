@@ -23,9 +23,6 @@ The commandline client handles [Newline Delimited JSON](http://ndjson.org/),
 which is a perfect fit for CouchDB for many reasons. CouchDB also provides its
 continuous changes feed as ndjson.
 
-I have tried to minimize dependency footprint. Thats why I use plain http
-requests for example.
-
 [![Build Status](https://travis-ci.org/jo/5984.svg?branch=master)](https://travis-ci.org/jo/5984)
 
 ## Installation
