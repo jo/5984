@@ -1,6 +1,9 @@
 var url = require('url')
 var path = require('path')
-var http = require('http')
+var http = {
+  'http:': require('http'),
+  'https:': require('https')
+}
 var JSONStream = require('JSONStream')
 var tap = require('tap')
 
@@ -27,7 +30,9 @@ exports.setup = function (docs, done) {
     headers.Authorization = 'Basic ' + new Buffer(u.auth).toString('base64')
   }
 
-  http
+  var httpOrHttps = http[u.protocol]
+
+  httpOrHttps
     .request({
       hostname: u.hostname,
       protocol: u.protocol,
@@ -37,7 +42,7 @@ exports.setup = function (docs, done) {
       headers: headers
     })
     .on('response', function (response) {
-      http
+      httpOrHttps
         .request({
           hostname: u.hostname,
           protocol: u.protocol,
@@ -49,7 +54,7 @@ exports.setup = function (docs, done) {
         .on('response', function () {
           if (!docs) return done()
 
-          var req = http
+          var req = httpOrHttps
             .request({
               hostname: u.hostname,
               protocol: u.protocol,
